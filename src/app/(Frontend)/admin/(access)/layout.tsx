@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+
 import Footer from "@/components/Footer";
 import React from "react";
-import BG from "@/images/BG.jpg";
-import Head from "next/head";
+import AdminNav from "@/components/adminNAV";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "200" });
 
@@ -24,14 +23,19 @@ export default function RootLayout({
   return (
     <html className="!scroll-smooth  md:scroll-auto">
       <head>
-        <title>Sastra</title>
+        <title>Sastra Admin</title>
       </head>
       <body className={poppins.className}>
-        <div className=" ">
-          <Navbar />
-          <main>{children}</main>
+        <div className=" flex ">
+          <AdminNav />
+          <div className="w-[100%]">
+            <h1 className="bg-sky-900/90 flex justify-center pt-[8%] font-bold text-white text-3xl">
+              ADMIN PANEL
+            </h1>
+            <main>{children}</main>
+          </div>
         </div>
-        <Footer />
+       
       </body>
     </html>
   );
