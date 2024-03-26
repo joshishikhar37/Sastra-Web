@@ -6,6 +6,7 @@ export default function CareerPage(){
        <div>
         <CareerImg/>
         <br />
+        <br />
         <div className="w-[100%] flex justify-center">
             <div className="pl-100 w-[50%]">
                 <p>Be the part of diligent and well experienced team working in diversed portfolio of projects.</p>
