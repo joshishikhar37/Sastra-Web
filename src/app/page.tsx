@@ -53,15 +53,14 @@ export default function Home() {
               </h1>
               <div className="flex flex-col">
                 <div className="flex flex-wrap  flex-row gap-8 mx-auto">
+                  <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
-                      <a href="./expertpage">
                         <TbSettingsCog
                           size={55}
                           color="#0A4085"
                           className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
                         />
-                      </a>
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -73,14 +72,16 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </a>
 
+                  <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <HiDatabase
                         size={55}
                         color="#0A4085"
                         className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                      />
+                        />
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -93,14 +94,15 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-
+                  </a>
+                  <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <FaVideo
                         size={55}
                         color="#0A4085"
                         className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                      />
+                        />
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -112,16 +114,17 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                </a>
                 </div>
-
                 <div className="flex flex-wrap flex-row gap-8 mx-auto">
+                <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <SiSpringsecurity
                         size={55}
                         color="#0A4085"
                         className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                      />
+                        />
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -133,14 +136,15 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-
+                  </a>
+                  <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <TiWiFi
                         size={55}
                         color="#0A4085"
                         className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                      />
+                        />
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -152,14 +156,15 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-
+                  </a>
+                  <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <FaHandshakeSimple
                         size={55}
                         color="#0A4085"
                         className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                      />
+                        />
                     </div>
                     <div>
                       <h1 className="text-2xl font-semibold text-gray-700 my-4">
@@ -171,6 +176,7 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
+                  </a>
                 </div>
               </div>
             </div>
