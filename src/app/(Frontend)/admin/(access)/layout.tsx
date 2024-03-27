@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-import Footer from "@/components/Footer";
+
 import React from "react";
 import AdminNav from "@/components/adminNAV";
 
