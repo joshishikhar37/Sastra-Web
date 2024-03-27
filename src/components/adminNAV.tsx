@@ -16,19 +16,19 @@ const AdminNav = () => {
 
         <ul className=" flex-col py-[10%]">
           <li className="flex justify-center px-[2%] py-[2%] text-3xl text-white hover:text-black font-bold hover:bg-white hover:border-sky-200 borber-b-2 rounded-lg ">
-            <a href="#">Home</a>
+            <a href="/admin/home">Home</a>
           </li>
 
           <li className="flex justify-center px-[2%] py-[2%] text-3xl text-white hover:text-black font-bold hover:bg-white hover:border-sky-200 borber-b-2 rounded-lg">
-            <a href="">About</a>
+            <a href="/admin/about">About</a>
           </li>
 
           <li className="flex justify-center px-[2%] py-[2%] text-3xl text-white hover:text-black font-bold hover:bg-white hover:border-sky-200 borber-b-2 rounded-lg">
-            <a href="">Career</a>
+            <a href="/admin/career">Career</a>
           </li>
 
           <li className="flex justify-center px-[2%] py-[2%] text-3xl text-white hover:text-black font-bold hover:bg-white hover:border-sky-200 borber-b-2 rounded-lg">
-            <a href="">Contact</a>
+            <a href="/admin/contact">Contact</a>
           </li>
         </ul>
       </div>

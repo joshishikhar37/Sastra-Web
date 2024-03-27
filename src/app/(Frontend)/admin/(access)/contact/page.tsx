@@ -4,7 +4,8 @@ export default function AdminContactPage() {
   return (
     <section className="bg-gradient-to-r from-gray-100/90 to- bg-sky-900 ... h-screen w-screen flex justify-center">
       <div className="mt-36 flex-col justify-center items-center">
-       
+      <h1 className="font-black text-5xl flex justify-center mx-auto">Contact Page is</h1>
+
         <div className="flex gap-4">
           <h1 className="text-white font-black text-5xl">UNDER</h1>
           <h1 className="font-black text-5xl">CONSTRUCTION</h1>

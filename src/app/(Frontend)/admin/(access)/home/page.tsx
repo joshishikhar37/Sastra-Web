@@ -1,41 +1,26 @@
-'use client'
+import React from "react";
 
-
-import React, { useState } from "react";
-import AdminNAV from "@/components/adminNAV";
-import router from "next/router";
-
-const AdminHomePage = () => {
-  const [text, setText] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const res = await fetch("api/admin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text }),
-    });
-
-    if (res.ok) {
-      const form = e.target;
-
-      router.push("/");
-    } else {
-      console.log("User registration failed.");
-    }
-  };
-
+export default function AdminHomePage() {
   return (
-    <div className="flex items-center">
-      <form onSubmit={handleSubmit}>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} className="border-2 border-black" />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-};
+    <section className="bg-gradient-to-r from-gray-100/90 to- bg-sky-900 ... h-screen w-screen flex justify-center">
+      <div className="mt-36 flex-col justify-center items-center">
+      <h1 className="font-black text-5xl flex justify-center mx-auto">Home Page is</h1>
 
-export default AdminHomePage;
+        <div className="flex gap-4">
+          <h1 className="text-white font-black text-5xl">UNDER</h1>
+          <h1 className="font-black text-5xl">CONSTRUCTION</h1>
+        </div>
+        <div className="mx-auto flex justify-center text-center">
+          <h1 className="font-black text-3xl text-center">
+            Site is under Construction
+          </h1>
+              </div>
+              <div className="mx-auto flex justify-center text-center">
+          <h1 className="text-white font-black text-3xl text-center">
+           Please visit later
+          </h1>
+        </div>
+      </div>
+    </section>
+  );
+}
