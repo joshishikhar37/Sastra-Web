@@ -9,7 +9,7 @@ interface ReusableComponentProps {
 
 const NewAboutBox: React.FC<ReusableComponentProps> = ({ desc, limit }) => {
   const [count, setCount] = useState(0);
-  const [intervalDuration, setIntervalDuration] = useState(20); // Initial interval duration
+  const [intervalDuration, setIntervalDuration] = useState(20); // Initial interval durationz
 
   useEffect(() => {
     const interval = setInterval(() => {
