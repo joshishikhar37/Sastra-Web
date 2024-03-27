@@ -14,10 +14,7 @@ const NewAboutBox: React.FC<ReusableComponentProps> = ({ desc, limit }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (count < limit) {
-        setCount((prevCount) => prevCount + 1); // Increase count rapidly initially
-        if (intervalDuration < 200) {
-          setIntervalDuration((prevIntervalDuration) => prevIntervalDuration + 2); // Gradually increase interval duration
-        }
+        setCount((prevCount) => prevCount + 1); // Increase count
       } else {
         clearInterval(interval);
       }
@@ -25,6 +22,22 @@ const NewAboutBox: React.FC<ReusableComponentProps> = ({ desc, limit }) => {
 
     return () => clearInterval(interval);
   }, [count, limit, intervalDuration]);
+
+  // Function to handle count up to 20
+  useEffect(() => {
+    if (limit < 25) {
+      setIntervalDuration(80); // Reset interval duration
+      setCount(0); // Reset count
+    }
+  }, [limit]);
+
+  // Function to handle count up to 100
+  useEffect(() => {
+    if (limit > 300) {
+      setIntervalDuration(2); // Further decrease interval duration for faster count up
+      setCount(0); // Reset count
+    }
+  }, [limit]);
 
   return (
     <div className='h-68 w-80 border-b-4 border-sky-900 py-8 px-6 shadow-lg hover:shadow-2xl my-10 transition-all ease-in-out'>
