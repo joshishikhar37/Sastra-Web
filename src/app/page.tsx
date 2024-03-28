@@ -39,7 +39,7 @@ export default function Home() {
               </p>
             </div>
             <div className="w-[25%] text-left pl-[3%] ml-10S text-[#052651]  font-extrabold ">
-              {pageText}
+            With more than a decade of experience and diverse portfolio of implemented projects, we possess required market expertise to provide you with best support and solution.
             </div>
           </div>
 
