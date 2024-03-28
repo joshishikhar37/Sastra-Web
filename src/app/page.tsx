@@ -67,15 +67,14 @@ export default function Home() {
                         Network Desgin
                       </h1>
                       <p className="text-xs">
-                        Optimum network design to meet your ever changing
-                        business needs
+                      Designing an adaptable network infrastructure to efficiently accommodate evolving business requirements .
                       </p>
                     </div>
                   </div>
                   </a>
 
                   <a href="./expertpage">
-                  <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
+                  <div className="  rounded-xl h-88 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                       <HiDatabase
                         size={55}
@@ -131,8 +130,7 @@ export default function Home() {
                         Network Security{" "}
                       </h1>
                       <p className="text-xs">
-                        Securing your network against threats and vulnerability
-                        over internet{" "}
+                      Securing network integrity against internet threats involves robust measures, vigilance, and proactive strategies.
                       </p>
                     </div>
                   </div>
@@ -151,8 +149,7 @@ export default function Home() {
                         Wireless{" "}
                       </h1>
                       <p className="text-xs">
-                        Design, plan and install efficient wireless solution at
-                        your premises{" "}
+                      Efficiently design, plan, and deploy wireless solutions tailored to your premises specific requirements.
                       </p>
                     </div>
                   </div>
