@@ -8,7 +8,7 @@ import NewAboutBox from "@/components/NewAboutBox";
 export default function About() {
   return (
     <main>
-      <div className="pt-10">
+      <div className="pt-3">
         <AboutImg />
         <div className="py-10 px-20">
           <div className="my-6">

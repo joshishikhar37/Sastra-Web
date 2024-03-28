@@ -14,7 +14,7 @@ const CareerImg = () => {
   };
 
   return (
-    <div style={backgroundStyle} className="mt-10">
+    <div style={backgroundStyle} className="mt-3">
       <div className="">
         <div className="text-slate-100 text-4xl font-semibold ">
          Career at Sastra
