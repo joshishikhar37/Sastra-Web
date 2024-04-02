@@ -11,8 +11,23 @@ import { SiSpringsecurity } from "react-icons/si";
 import { TiWiFi } from "react-icons/ti";
 import { HiDatabase } from "react-icons/hi";
 
+
 export default function Home() {
   const [pageText, setPageText] = useState("");
+  const [description, setDescriptions] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from Strapi API
+    fetch('http://localhost:1337/api/whychooseus')
+      .then(response => response.json())
+      .then(data => {
+        const extractedDescription = data.data.attributes.description[0].children[0].text;
+        setDescriptions(extractedDescription);
+      })
+      .catch(error => {
+        console.error('Error fetching data from Strapi:', error);
+      });
+  }, []); 
 
   useEffect(() => {
     setPageText(window.localStorage.getItem("pageText") || "");
@@ -39,7 +54,9 @@ export default function Home() {
               </p>
             </div>
             <div className="w-[25%] text-left pl-[3%] ml-10S text-[#052651]  font-extrabold ">
-            With more than a decade of experience and diverse portfolio of implemented projects, we possess required market expertise to provide you with best support and solution.
+            
+              <p>{description}</p>
+           
             </div>
           </div>
 
