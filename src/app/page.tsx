@@ -55,7 +55,7 @@ export default function Home() {
             </div>
             <div className="w-[25%] text-left pl-[3%] ml-10S text-[#052651]  font-extrabold ">
             
-              <li>{description}</li>
+              <p>{description}</p>
            
             </div>
           </div>
