@@ -10,11 +10,23 @@ import { FaHandshakeSimple, FaVideo } from "react-icons/fa6";
 import { SiSpringsecurity } from "react-icons/si";
 import { TiWiFi } from "react-icons/ti";
 import { HiDatabase } from "react-icons/hi";
-
+import Expertbox from "@/components/expertbox";
+import useFetch from '../hooks/useFetch'
 
 export default function Home() {
   const [pageText, setPageText] = useState("");
   const [description, setDescriptions] = useState([]);
+  const {loading ,error ,data}=useFetch('http://localhost:1337/api/ourexpertises')
+  const [services, setServices] = useState<Service[]>([]);
+  console.log(data)
+
+  interface Service{
+    attributes: any;
+    id:number,
+    title:string,
+    description: {type:string; children:{ type: string; text: string}[]}[];
+  }
+ 
 
   useEffect(() => {
     // Fetch data from Strapi API
@@ -27,11 +39,24 @@ export default function Home() {
       .catch(error => {
         console.error('Error fetching data from Strapi:', error);
       });
-  }, []); 
-
+  },[]); 
   useEffect(() => {
     setPageText(window.localStorage.getItem("pageText") || "");
   }, []);
+
+  // for expertise
+  useEffect(()=> {
+    fetch("http://localhost:1337/api/ourexpertises")
+    .then(response => response.json())
+    .then((data: {data: Service[]}) => {
+      setServices(data.data);
+    })
+    .catch( error => {
+      console.error('Error fetching data: ',error)
+    });
+  },
+  []);
+
   return (
     <main>
       {" "}
@@ -69,8 +94,9 @@ export default function Home() {
                 Our Expertise{" "}
               </h1>
               <div className="flex flex-col">
-                <div className="flex flex-wrap  flex-row gap-8 mx-auto">
-                  <a href="./expertpage">
+                <div className="flex flex-wrap  flex-row gap-8 mx-auto my-10 ">
+
+                  {/* <a href="./expertpage">
                   <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
                     <div className="h-30">
                         <TbSettingsCog
@@ -88,109 +114,18 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                  </a>
-
+                  </a> */}
+                  
                   <a href="./expertpage">
-                  <div className="  rounded-xl h-88 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
-                    <div className="h-30">
-                      <HiDatabase
-                        size={55}
-                        color="#0A4085"
-                        className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                        />
+                 <div className="grid grid-cols-3 gap-4">
+                  {services.map(service => (
+                    <div key={service.id}>
+                      <Expertbox explogo={""} text={service.attributes.title} desc={service.attributes.description[0].children[0].text}/>
+                      
                     </div>
-                    <div>
-                      <h1 className="text-2xl font-semibold text-gray-700 my-4">
-                        Data Center{" "}
-                      </h1>
-                      <p className="text-xs">
-                        Complete solution for data center design with service
-                        continuity, security, flexibility and adaptability to
-                        changes
-                      </p>
-                    </div>
-                  </div>
-                  </a>
-                  <a href="./expertpage">
-                  <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
-                    <div className="h-30">
-                      <FaVideo
-                        size={55}
-                        color="#0A4085"
-                        className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                        />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-semibold text-gray-700 my-4">
-                        Video Conferencing{" "}
-                      </h1>
-                      <p className="text-xs">
-                        Stay connected with your stakeholders anytime, anywhere
-                        with our flawless VC solution
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                </div>
-                <div className="flex flex-wrap flex-row gap-8 mx-auto">
-                <a href="./expertpage">
-                  <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
-                    <div className="h-30">
-                      <SiSpringsecurity
-                        size={55}
-                        color="#0A4085"
-                        className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                        />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-semibold text-gray-700 my-4">
-                        Network Security{" "}
-                      </h1>
-                      <p className="text-xs">
-                      Securing network integrity against internet threats involves robust measures, vigilance, and proactive strategies.
-                      </p>
-                    </div>
-                  </div>
-                  </a>
-                  <a href="./expertpage">
-                  <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
-                    <div className="h-30">
-                      <TiWiFi
-                        size={55}
-                        color="#0A4085"
-                        className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                        />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-semibold text-gray-700 my-4">
-                        Wireless{" "}
-                      </h1>
-                      <p className="text-xs">
-                      Efficiently design, plan, and deploy wireless solutions tailored to your premises specific requirements.
-                      </p>
-                    </div>
-                  </div>
-                  </a>
-                  <a href="./expertpage">
-                  <div className="  rounded-xl h-68 w-80 border-b-4 bg-white border-[#052651c6] py-10 px-8 shadow-lg hover:shadow-2xl my-10 transition-all  ease-in-out">
-                    <div className="h-30">
-                      <FaHandshakeSimple
-                        size={55}
-                        color="#0A4085"
-                        className="size={120}  transition-all ease-in-out hover:cursor-pointer duration-500 hover:scale-150"
-                        />
-                    </div>
-                    <div>
-                      <h1 className="text-2xl font-semibold text-gray-700 my-4">
-                        IT Consultancy{" "}
-                      </h1>
-                      <p className="text-xs">
-                        Evaluate and implement your IT system and infrastructure
-                        to help you achieve business objectives{" "}
-                      </p>
-                    </div>
-                  </div>
-                  </a>
+                  ))}
+                 </div>
+                 </a>
                 </div>
               </div>
             </div>
